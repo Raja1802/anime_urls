@@ -38,6 +38,7 @@ class AjarPixabayItem(scrapy.Item):
 
 
 class AjarGogoanimeItem(scrapy.Item):
+        anime_name = scrapy.Field()
         name_episode = scrapy.Field()
         download_url = scrapy.Field()
         server_name_1 = scrapy.Field()

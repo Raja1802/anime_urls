@@ -23,7 +23,10 @@ class QuotesSpider(CrawlSpider):
         server = []
         server = AjarGogoanimeItem()
 
+
         server['name_episode'] = \
+            response.css("#wrapper_bg > section > section.content_left > div:nth-child(1) > div.anime_name.anime_video > div.title_name > h2::text").get()
+        server['anime_name'] = \
             response.css("#wrapper_bg > section > section.content_left > div:nth-child(1) > div.anime_name.anime_video > div.title_name > h2::text").get()
         server['download_url'] = response.css('#wrapper_bg > section > section.content_left > div:nth-child(1) > div.anime_video_body > div.download-anime > a::attr(href)').get()
         server['server_url_1'] = \
